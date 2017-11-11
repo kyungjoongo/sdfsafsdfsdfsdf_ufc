@@ -1,18 +1,44 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+    <ion-navbar color="danger">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Fight Card</ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <ion-card class="blurred-title-card" *ngFor="let card of result">
+        <div class="card-image" (click)="goFightCard(card.id)"
+             [style.background-image]="'url(' + card.secondary_feature_image + ')'"></div>
+        <div class="card-title-background">
+                    <span [style.background-image]="'url(' + card.secondary_feature_image + ')'"></span>
+                </div>
+        <div class="card-title" style="color: white">
+            <p class="font_Fjalla">
+
+                <ion-col col-6="">
+
+                    [{{card.id}}]
+
+                    {{card.base_title}}
+
+
+                    {{card.title_tag_line}} &nbsp;&nbsp;&nbsp;
+                </ion-col>
+                <br/>
+                <ion-col>
+
+                    &nbsp;
+                    <br>
+                    <div *ngIf="card.event_time_text; else elseBlock">({{card.event_time_zone_text}}) {{card.event_time_text}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <ng-template #elseBlock>TBD&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</ng-template>
+
+
+                </ion-col>
+            </p>
+        </div>
+    </ion-card>
 </ion-content>
