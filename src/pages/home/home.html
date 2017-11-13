@@ -21,7 +21,7 @@
 
                 <ion-col col-6="">
 
-                    [{{card.id}}]
+
 
                     {{card.base_title}}
 
@@ -33,7 +33,7 @@
 
                     &nbsp;
                     <br>
-                    <div *ngIf="card.event_time_text; else elseBlock">({{card.event_time_zone_text}}) {{card.event_time_text}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                    <div *ngIf="card.event_time_text; else elseBlock">({{card.event_time_zone_text}})  {{card.event_dategmt | slice:0:10}} {{card.event_time_text}}  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
                     <ng-template #elseBlock>TBD&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</ng-template>
 
 

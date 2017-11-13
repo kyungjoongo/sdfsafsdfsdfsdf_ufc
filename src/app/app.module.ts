@@ -13,9 +13,11 @@ import {SplashScreen} from '@ionic-native/splash-screen';
 import {HttpProvider} from '../providers/http/http';
 import {InAppBrowser} from "@ionic-native/in-app-browser";
 import {VideoPlaylist} from "../pages/weight-ins/video-playlist";
-import { ChannelListPage} from "../pages/channel-list/channel-list";
+import {ChannelListPage} from "../pages/channel-list/channel-list";
+import {FightersPage} from "../pages/fighters/fighters";
+import {AdMobPro} from "@ionic-native/admob-pro";
 
-import { YoutubeVideoPlayer } from "@ionic-native/youtube-video-player";
+import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 
 
 @NgModule({
@@ -24,7 +26,7 @@ import { YoutubeVideoPlayer } from "@ionic-native/youtube-video-player";
         HomePage,
         ListPage,
         OctagonGirlsPage, OtagonGirlsDetailPage,
-        VideoPlaylist,ChannelListPage
+        VideoPlaylist, ChannelListPage, FightersPage
     ],
     imports: [
         HttpModule,
@@ -36,12 +38,12 @@ import { YoutubeVideoPlayer } from "@ionic-native/youtube-video-player";
         MyApp,
         HomePage,
         ListPage,
-        OctagonGirlsPage, OtagonGirlsDetailPage, VideoPlaylist,ChannelListPage
+        OctagonGirlsPage, OtagonGirlsDetailPage, VideoPlaylist, ChannelListPage, FightersPage
     ],
 
 
     providers: [
-        StatusBar,YoutubeVideoPlayer,
+        StatusBar, YoutubeVideoPlayer,AdMobPro,
         SplashScreen, HttpProvider, InAppBrowser,
         {provide: ErrorHandler, useClass: IonicErrorHandler},
     ]
