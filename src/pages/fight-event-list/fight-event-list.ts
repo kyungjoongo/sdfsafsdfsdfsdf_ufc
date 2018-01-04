@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams} from 'ionic-angular';
 import {OtagonGirlsDetailPage} from "../otagon-girls-detail/otagon-girls-detail";
 import {HttpProvider} from "../../providers/http/http";
 import {HttpClient} from "@angular/common/http";
@@ -24,13 +24,20 @@ export class FightEventListPage {
     detailPage : OtagonGirlsDetailPage;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public httpProvider: HttpProvider
-        , public httpclient : HttpClient
+        , public httpclient : HttpClient, public loadingCtrl : LoadingController
     ) {
 
+        let loading = this.loadingCtrl.create({
+            content: 'Please wait...',
+            spinner: 'dots'
+        });
+        loading.present();
         this.httpclient.get('http://nodejs-191113.appspot.com/event_list').subscribe((res:any)=>{
 
             console.log('#####################' + JSON.stringify(res.result));
             this.results = res.result;
+
+            loading.dismissAll();
 
         })
     }

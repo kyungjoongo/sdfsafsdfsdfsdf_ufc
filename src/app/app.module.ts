@@ -20,7 +20,7 @@ import {AdMobPro} from "@ionic-native/admob-pro";
 import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 import {FightCard2Page} from "../pages/fight-card2/fight-card2";
 import {FightEventListPage} from "../pages/fight-event-list/fight-event-list";
-
+import { TitleHolderPage} from "../pages/title-holder/title-holder";
 
 @NgModule({
     declarations: [
@@ -28,7 +28,7 @@ import {FightEventListPage} from "../pages/fight-event-list/fight-event-list";
         HomePage,
         ListPage,
         OctagonGirlsPage, OtagonGirlsDetailPage,
-        VideoPlaylist, ChannelListPage, FightersPage, FightCard2Page, FightEventListPage
+        VideoPlaylist, ChannelListPage, FightersPage, FightCard2Page, FightEventListPage,TitleHolderPage
     ],
     imports: [
         HttpModule,
@@ -40,7 +40,7 @@ import {FightEventListPage} from "../pages/fight-event-list/fight-event-list";
         MyApp,
         HomePage,
         ListPage,
-        OctagonGirlsPage, OtagonGirlsDetailPage, VideoPlaylist, ChannelListPage, FightersPage, FightCard2Page, FightEventListPage
+        OctagonGirlsPage, OtagonGirlsDetailPage, VideoPlaylist, ChannelListPage, FightersPage, FightCard2Page, FightEventListPage,TitleHolderPage
     ],
 
 

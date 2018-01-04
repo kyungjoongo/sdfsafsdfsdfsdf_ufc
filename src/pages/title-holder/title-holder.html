@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Title Holder</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="home" style="background-color: #e3e3e3">
+    <ion-row tappable="" class="center001" style="text-align: center" *ngFor="let item of results; let i = index"
+             [ngClass]="{ 'fontRed': i == 0 }">
+        <ion-col col-12 class="">
+            <h2>
+                {{item.weight_class}}
+
+            </h2>
+        </ion-col>
+        <button ion-button style="height: auto!important;width: 100%" clear >
+            <ion-col style="background: rgba(0,0,0,0);" col-12 class="" (click)="goFighterDetail(item.fighter_name)">
+
+                <img [src]="item.fighter_image"/>
+            </ion-col>
+        </button>
+
+        <ion-col col-12 class="">
+            <p>
+                {{item.fighter_name}}
+            </p>
+            <p>
+
+                {{item.fighters_wld}}
+            </p>
+        </ion-col>
+    </ion-row>
+</ion-content>

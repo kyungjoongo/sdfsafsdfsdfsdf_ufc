@@ -11,20 +11,19 @@ import {FightersPage} from "../pages/fighters/fighters";
 import {AdMobPro} from "@ionic-native/admob-pro";
 import {FightCard2Page} from "../pages/fight-card2/fight-card2";
 import {FightEventListPage} from "../pages/fight-event-list/fight-event-list";
+import {TitleHolderPage} from "../pages/title-holder/title-holder";
 
 @Component({
     templateUrl: 'app.html'
 })
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
-
     rootPage: any = FightEventListPage;
+    //rootPage: any = TitleHolderPage
 
     pages: Array<{ title: string, component: any }>;
 
     constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private admob: AdMobPro) {
-
-
         platform.ready().then(() => {
 
             var admobid = {
@@ -60,7 +59,8 @@ export class MyApp {
             {title: 'Event List', component: FightEventListPage},
             {title: 'Octagon Girls', component: OctagonGirlsPage},
             {title: 'Event Video List', component: ChannelListPage},
-            {title: 'Fighters', component: FightersPage}
+            {title: 'Fighters', component: FightersPage},
+            {title: 'Title Holder', component: TitleHolderPage}
             /*, {title: 'Upcomming Fight Card', component: FightCard2Page}*/
 
 

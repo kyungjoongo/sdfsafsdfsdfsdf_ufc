@@ -5,12 +5,6 @@ import {HttpProvider} from "../../providers/http/http";
 import {HttpClient} from "@angular/common/http";
 import {InAppBrowser} from "@ionic-native/in-app-browser";
 
-/**
- * Generated class for the FightCard2Page page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -30,10 +24,6 @@ export class FightCard2Page {
 
         let title = this.navParams.get('title');
         let url = this.navParams.get('url');
-
-        /*alert(title);*/
-
-
         this.httpclient.get('http://nodejs-191113.appspot.com/fightcard_detail2/' + title).subscribe((res: any) => {
 
             console.log('#####################' + JSON.stringify(res.result[0].fight_images));
@@ -44,9 +34,7 @@ export class FightCard2Page {
     }
 
     goFighterDetail(fighter_fullname){
-
         var browser = this.iab.create('http://www.ufc.com/fighter/'+ fighter_fullname);
-        /*var browser = this.iab.create('http://www.ufc.com/fighter/'+ fighter_fullname, '_blank', 'location=no,toolbar=no');*/
     }
 
 
