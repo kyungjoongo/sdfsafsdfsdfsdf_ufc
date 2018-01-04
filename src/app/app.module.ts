@@ -7,7 +7,7 @@ import {HomePage} from '../pages/home/home';
 import {ListPage} from '../pages/list/list';
 import {OctagonGirlsPage} from "../pages/octagon-girls/octagon-girls";
 import {OtagonGirlsDetailPage} from "../pages/otagon-girls-detail/otagon-girls-detail";
-
+import { HttpClientModule} from "@angular/common/http";
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {HttpProvider} from '../providers/http/http';
@@ -18,6 +18,8 @@ import {FightersPage} from "../pages/fighters/fighters";
 import {AdMobPro} from "@ionic-native/admob-pro";
 
 import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
+import {FightCard2Page} from "../pages/fight-card2/fight-card2";
+import {FightEventListPage} from "../pages/fight-event-list/fight-event-list";
 
 
 @NgModule({
@@ -26,11 +28,11 @@ import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
         HomePage,
         ListPage,
         OctagonGirlsPage, OtagonGirlsDetailPage,
-        VideoPlaylist, ChannelListPage, FightersPage
+        VideoPlaylist, ChannelListPage, FightersPage, FightCard2Page, FightEventListPage
     ],
     imports: [
         HttpModule,
-        BrowserModule,
+        BrowserModule,HttpClientModule,
         IonicModule.forRoot(MyApp),
     ],
     bootstrap: [IonicApp],
@@ -38,7 +40,7 @@ import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
         MyApp,
         HomePage,
         ListPage,
-        OctagonGirlsPage, OtagonGirlsDetailPage, VideoPlaylist, ChannelListPage, FightersPage
+        OctagonGirlsPage, OtagonGirlsDetailPage, VideoPlaylist, ChannelListPage, FightersPage, FightCard2Page, FightEventListPage
     ],
 
 

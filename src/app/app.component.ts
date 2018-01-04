@@ -9,6 +9,8 @@ import {OctagonGirlsPage} from "../pages/octagon-girls/octagon-girls";
 import {ChannelListPage} from "../pages/channel-list/channel-list";
 import {FightersPage} from "../pages/fighters/fighters";
 import {AdMobPro} from "@ionic-native/admob-pro";
+import {FightCard2Page} from "../pages/fight-card2/fight-card2";
+import {FightEventListPage} from "../pages/fight-event-list/fight-event-list";
 
 @Component({
     templateUrl: 'app.html'
@@ -16,7 +18,7 @@ import {AdMobPro} from "@ionic-native/admob-pro";
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = HomePage;
+    rootPage: any = FightEventListPage;
 
     pages: Array<{ title: string, component: any }>;
 
@@ -54,10 +56,12 @@ export class MyApp {
 
         // used for an example of ngFor and navigation
         this.pages = [
-            {title: 'Fight Card', component: HomePage},
-            {title: 'Octagon Girls', component: OctagonGirlsPage}
-            , {title: 'Event Video List', component: ChannelListPage}
-            , {title: 'Fighters', component: FightersPage}
+            /*{title: 'Fight Card', component: HomePage},*/
+            {title: 'Event List', component: FightEventListPage},
+            {title: 'Octagon Girls', component: OctagonGirlsPage},
+            {title: 'Event Video List', component: ChannelListPage},
+            {title: 'Fighters', component: FightersPage}
+            /*, {title: 'Upcomming Fight Card', component: FightCard2Page}*/
 
 
         ];

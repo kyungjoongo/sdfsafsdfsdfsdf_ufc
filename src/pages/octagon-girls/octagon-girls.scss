@@ -1,4 +1,4 @@
-page-home {
+page-octagon-girls {
 
 
     ion-card.blurred-title-card {
@@ -12,10 +12,11 @@ page-home {
 
         .card-image {
             width: 100vw;
+            margin-left: -10px;
             height: 60vw;
-            background-size:     cover;
-            background-repeat:   no-repeat;
             background-position: top;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .card-title-background,
@@ -34,15 +35,15 @@ page-home {
         .card-title-background span {
             position: absolute;
             width: 100%;
-            height: 10vw;
+            height: 60vw;
             bottom: 0;
             left: 0;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
             -webkit-filter: blur(5px);
-            -moz-filter: blur(3px);
-            -o-filter: blur(3px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
             -ms-filter: blur(5px);
             filter: blur(5px);
         }
@@ -68,8 +69,6 @@ page-home {
             -ms-flex-align: start;
             align-items: flex-start;
 
-            user-select: text;
-
 
         }
 
@@ -78,12 +77,9 @@ page-home {
             font-size: 1em;
             font-weight: normal;
             width: 100%;
-            color: white !important;
+            color: black !important;
         }
 
     }
-
-
-
 
 }

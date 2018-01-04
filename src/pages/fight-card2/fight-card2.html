@@ -1,0 +1,34 @@
+<ion-header class="breeSerif">
+    <ion-navbar color="danger">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Fight Card</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content class="home">
+    <ion-row style="text-align: center!important;">
+        <ion-col col-12 class="breeSerif">
+           <h1> {{title}}</h1>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="center001" *ngFor="let item of results; let i = index" [ngClass]="{ 'fontRed': i == 0 }">
+        <ion-col col-6 class="" (click)="goFighterDetail(item.extract_fighter_name1)">
+            <img [src]="item.fighter_image1" />
+        </ion-col>
+        <ion-col col-6 class="" (click)="goFighterDetail(item.extract_fighter_name2)">
+            <img [src]="item.fighter_image2"/>
+        </ion-col>
+        <ion-col col-6 class="">
+            {{item.figher_name1}}
+        </ion-col>
+        <ion-col col-6 class="">
+            {{item.figher_name2}}
+        </ion-col>
+
+
+    </ion-row>
+</ion-content>

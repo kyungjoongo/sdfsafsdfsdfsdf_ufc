@@ -1,0 +1,21 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Octagon Girls Detail</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div *ngIf="result?.length>0; else elseBlock">
+        <ion-card class="blurred-title-card" *ngFor="let card of result">
+            <img src={{card.path}}>
+        </ion-card>
+    </div>
+    <ng-template #elseBlock>
+            No Picture
+    </ng-template>
+</ion-content>
+
+

@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar color="yellow">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Fighter's Info</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+    <ion-searchbar
+        [(ngModel)]="searchTerm"
+        [showCancelButton]="shouldShowCancel"
+        (ionInput)="setFilteredItems()"
+        placeholder="Please input fighter's name"
+        (ionCancel)="onCancelBtn()">
+    </ion-searchbar>
+    <ion-list class="blurred-title-card" *ngFor="let card of result ">
+        <ion-item (click)="goDetail(card.id)">
+
+            <ion-avatar item-start>
+                <img [src]="card.profile_image">
+            </ion-avatar>
+
+            <h2 text-wrap>{{card.first_name}} {{card.last_name}} &nbsp; &nbsp; &nbsp;</h2>
+
+        </ion-item>
+
+    </ion-list>
+</ion-content>

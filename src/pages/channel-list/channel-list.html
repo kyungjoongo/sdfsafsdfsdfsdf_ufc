@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar color="danger">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Event Video List</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card ion-item *ngFor="let list of channelList " (click)="openPlaylist(list.id, list.snippet.title)">
+        <ion-avatar item-start >
+            <div *ngIf="list.snippet.thumbnails.default.url; else elseBlock">
+                <img [src]="list.snippet.thumbnails.default.url">
+            </div>
+            <ng-template #elseBlock>
+                No Picture
+            </ng-template>
+
+
+
+        </ion-avatar>
+        <h2 text-wrap>{{ list.snippet.title }}</h2>
+        <p>{{ list.snippet.publishedAt | date:'short' }}</p>
+    </ion-card>
+
+
+</ion-content>
+

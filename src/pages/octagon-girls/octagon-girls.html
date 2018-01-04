@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Octagon Girls</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <!--{{ channelList | json }}-->
+
+    <ion-card class="blurred-title-card" *ngFor="let card of result">
+        <div (click)="goDetail(card.first_name,  card.last_name)" class="card-image" [style.background-image]="'url(' + card.large_profile_picture + ')'"></div>
+        <div class="card-title" style="color: black">
+            <p>
+                {{card.first_name}} {{card.last_name}} &nbsp; &nbsp; &nbsp;
+            </p>
+        </div>
+    </ion-card>
+</ion-content>
+

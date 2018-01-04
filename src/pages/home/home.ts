@@ -34,6 +34,8 @@ export class HomePage {
     }
 
     goFightCard(eventId) {
+
+        alert(eventId);
         let browser = this.iab.create('http://ufc-data-api.ufc.com/api/v1/us/events/'+ eventId, '_blank', 'location=no,toolbar=no');
 
     }

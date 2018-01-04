@@ -58,5 +58,66 @@ $colors: (
 
 }
 
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC:400,600');
+
+.font_Spectral {
+    font-family: 'Spectral SC', serif;
+}
+
+body {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+
+.breeSerif {
+    font-family: 'Bree Serif', serif;
+}
+
+.no-padding {
+    padding: 0 !important;
+    /*margin: 0px!important;*/
+}
+
+.gray {
+    padding: 0px !important;
+    background-color: lightgray !important;
+}
+
+body {
+    font-family: 'Bree Serif', serif !important;
+}
+
+ion-header {
+    font-family: 'Bree Serif', serif !important;
+}
+
+.home {
+
+    scroll-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    ion-grid {
+        padding: 0;
+        height: 100%;
+    }
+
+    ion-row {
+        flex: 1;
+        border: solid black thin;
+        border-color: black;
+
+    }
+
+}
+
+
+
+
 
 

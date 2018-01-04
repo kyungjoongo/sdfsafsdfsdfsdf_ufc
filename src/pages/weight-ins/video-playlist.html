@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar color="secondary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card ion-item *ngFor="let list of playlists  " (click)="openVideo(list)">
+        <ion-thumbnail item-start>
+
+            <img [src]="list.snippet.thumbnails.default.url">
+
+
+        </ion-thumbnail>
+        <h2 text-wrap="">{{ list.snippet.title }}</h2>
+        <p>{{ list.snippet.publishedAt | date:'short' }}</p>
+    </ion-card>
+
+</ion-content>
