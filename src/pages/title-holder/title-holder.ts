@@ -27,15 +27,17 @@ export class TitleHolderPage {
             content: 'Please wait...',
             spinner: 'dots'
         });
-        loading.present();
-        this.httpclient.get('https://nodejs-191113.appspot.com/title_holder').subscribe((res: any) => {
+        loading.present().then(()=>{
+            this.httpclient.get('https://nodejs-191113.appspot.com/title_holder').subscribe((res: any) => {
 
-            console.log('#####################' + JSON.stringify(res.result));
-            this.results = res.result;
-            loading.dismissAll();
+                console.log('#####################' + JSON.stringify(res.result));
+                this.results = res.result;
+                loading.dismissAll();
 
 
-        })
+            })
+        });
+
     }
 
     goFighterDetail(fighter_fullname) {

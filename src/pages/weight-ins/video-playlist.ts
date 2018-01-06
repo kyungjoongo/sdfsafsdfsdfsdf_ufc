@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {IonicPage, NavController, NavParams, Platform} from 'ionic-angular';
+import {IonicPage, LoadingController, NavController, NavParams, Platform} from 'ionic-angular';
 import {HttpProvider} from "../../providers/http/http";
 import {YoutubeVideoPlayer} from "@ionic-native/youtube-video-player";
 import {InAppBrowser} from "@ionic-native/in-app-browser";
@@ -23,16 +23,23 @@ export class VideoPlaylist {
     title: string;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public httpProvider: HttpProvider
-        , private youtube: YoutubeVideoPlayer, private plt: Platform
+        , private youtube: YoutubeVideoPlayer, private plt: Platform, public loadingCtrl: LoadingController
         , private   iab: InAppBrowser) {
 
-        var playListId = this.navParams.get("playListId");
+        let playListId = this.navParams.get("playListId");
         this.title = this.navParams.get("title");
-        this.httpProvider.getListVideos(playListId).subscribe(response => {
+        let loading = this.loadingCtrl.create({
+            content: 'Please wait...',
+            spinner: 'dots'
+        });
+        loading.present().then(() => {
+            this.httpProvider.getListVideos(playListId).subscribe(response => {
 
-            this.playlists = response;
-            console.log(response);
-        })
+                this.playlists = response;
+                console.log(response);
+                loading.dismissAll();
+            })
+        });
 
 
     }
@@ -43,15 +50,7 @@ export class VideoPlaylist {
 
 
     openVideo(video) {
-        /*  if (this.plt.is('cordova')) {
-              this.youtube.openVideo(video.snippet.resourceId.videoId);
-          } else {*/
-        //window.open('https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId);
-        var browser = this.iab.create('https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId, '_blank', 'location=no,toolbar=no');
-        //}
+        this.iab.create('https://www.youtube.com/watch?v=' + video.snippet.resourceId.videoId);
     }
 
-    /*//
-
-    }*/
 }
